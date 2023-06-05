@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ronit's Catan Board Generator</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        .board {
+            text-align: center;
+            padding-top: 60px;
+        }
+
+
+        .row {
+            margin-bottom: -19px;
+        }
+
+        .tile {
+            display: inline-block;
+            margin: 0 -2px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .odd-row .tile {}
+
+        .generator-div {
+            display: grid;
+        }
+
+        .text-overlay {
+            display: inline-block;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            margin-left: -64px;
+            margin-bottom: -30px;
+            color: rgb(244, 241, 241);
+            font-size: 24px;
+            /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+        }
+
+        .text-overlay-text {
+            margin-top: 10px;
+        }
+    </style>
+    <py-config>
+        packages = []
+        [[fetch]]
+        files=["./catan1.py"]
+    </py-config>
+
+</head>
+
+<body>
+
+    <py-script src="./catan1.py"></py-script>
+    <div class="generator-div">
+        <div class="grid-item">
+            <button py-click="generate()">Generate</button>
+        </div>
+        <div class="grid-item">
+            <div id="output" class="board"></div>
+        </div>
+    </div>
+
+    <!-- <div class="board">
+        <div class="row">
+            <img class="tile" src="wheat.png" alt="Fields Tile">
+            <div class="text-overlay">
+                <p class="text-overlay-text">5</p>
+            </div>
+            <img class="tile" src="wood.png" alt="Forest Tile">
+            <div class="text-overlay">
+                <p class="text-overlay-text">6</p>
+            </div>
+            <img class="tile" src="sheep.png" alt="Pasture Tile">
+            <div class="text-overlay">
+                <p class="text-overlay-text">5</p>
+            </div>
+        </div>
+        <div class="row odd-row">
+            <img class="tile" src="brick.png" alt="Hill Tile">
+            <img class="tile" src="ore.png" alt="Mountain Tile">
+            <img class="tile" src="desert.png" alt="Desert Tile">
+            <img class="tile" src="wheat.png" alt="Fields Tile">
+            <div class="text-overlay">
+                <p>7</p>
+            </div>
+        </div>
+        <div class="row">
+            <img class="tile" src="wood.png" alt="Forest Tile">
+            <img class="tile" src="sheep.png" alt="Pasture Tile">
+            <img class="tile" src="brick.png" alt="Hill Tile">
+            <img class="tile" src="ore.png" alt="Mountain Tile">
+            <img class="tile" src="desert.png" alt="Desert Tile">
+        </div>
+        <div class="row odd-row">
+            <img class="tile" src="wheat.png" alt="Fields Tile">
+            <img class="tile" src="wood.png" alt="Forest Tile">
+            <img class="tile" src="sheep.png" alt="Pasture Tile">
+            <img class="tile" src="brick.png" alt="Hill Tile">
+        </div>
+        <div class="row">
+            <img class="tile" src="ore.png" alt="Mountain Tile">
+            <img class="tile" src="desert.png" alt="Desert Tile">
+            <img class="tile" src="wheat.png" alt="Fields Tile">
+        </div>
+        
+    </div> -->
+
+</body>
+
+</html>
